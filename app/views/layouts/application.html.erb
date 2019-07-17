@@ -11,5 +11,16 @@
 
   <body>
     <%= yield %>
+
+    <div id="user_header">
+  <% if logged_in? %>
+     <%= link_to 'Logout',  session_path('bogus-id'), method: :delete %>
+  <% else %>
+     <%= link_to "Sign Up", signup_path %>
+     <%= link_to "Log In", new_session_path %>
+  <% end %>
+</div>
+
+
   </body>
 </html>
