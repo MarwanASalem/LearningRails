@@ -8,6 +8,7 @@ WORKDIR /blog
 COPY Gemfile /blog/Gemfile
 COPY Gemfile.lock /blog/Gemfile.lock
 
+RUN gem install bundler:2.0.2
 RUN bundle install
 
 COPY . /blog
